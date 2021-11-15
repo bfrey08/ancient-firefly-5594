@@ -25,7 +25,7 @@ RSpec.describe 'Team Invoice Page' do
 
   it 'can open the team index page' do
     visit '/teams'
-  
+
     expect(page).to have_content('Teams')
   end
 
@@ -43,7 +43,7 @@ RSpec.describe 'Team Invoice Page' do
   end
   it 'shows all the players names and players on each team' do
     visit '/teams'
-
+    save_and_open_page
     expect(page).to have_content(@player_1.name)
     expect(page).to have_content(@player_1.age)
     expect(page).to have_content(@player_2.name)

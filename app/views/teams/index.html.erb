@@ -16,15 +16,12 @@ table, th, td {
         <th> Player Name
         <th> Player Age
       </tr>
-        <% team.players.each do |player| %>
-        <tr>
-
-        <section>
-        <th> <%= player.name %> </th>
-        <th> <%= player.age %> </th>
-        </section>
+        <% team.order_av_age.each do |player| %>
+      <tr>
+      <th> <%= player.name %> </th>
+      <th> <%= player.age %> </th>
       </tr>
-    <% end %>
+          <% end %>
   </table>
 
   <% end %>
