@@ -1,0 +1,30 @@
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<h1>Teams</h1>
+
+  <% @teams.each do |team| %>
+  <h3><%= team.hometown %>
+  <%= team.nickname %></h3>
+
+  <table>
+
+      <tr>
+        <th> Player Name
+        <th> Player Age
+      </tr>
+        <% team.players.each do |player| %>
+        <tr>
+
+        <section>
+        <th> <%= player.name %> </th>
+        <th> <%= player.age %> </th>
+        </section>
+      </tr>
+    <% end %>
+  </table>
+
+  <% end %>

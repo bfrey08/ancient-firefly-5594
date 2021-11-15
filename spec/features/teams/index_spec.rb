@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Team Invoice Page' do
   before :each do
     @competition_1 = Competition.create!(name: "Men's Regional", location: 'Louisville', sport: 'soccer')
-    @competition_1 = Competition.create!(name: "Women's State", location: 'New York', sport: 'soccer')
+    @competition_2 = Competition.create!(name: "Women's State", location: 'New York', sport: 'soccer')
 
     @team_1 = Team.create!(hometown: 'Leesburg', nickname: 'Rockets')
     @team_2 = Team.create!(hometown: 'Chattenuga', nickname: 'Jammers')
@@ -25,7 +25,7 @@ RSpec.describe 'Team Invoice Page' do
 
   it 'can open the team index page' do
     visit '/teams'
-
+    save_and_open_page
     expect(page).to have_content('Teams')
   end
 
