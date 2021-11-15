@@ -1,0 +1,5 @@
+<%= form_with url: "/competitions/#{@competition.id}/teams", method: :post, local: true do |form| %>
+  <%= form.label :nickname %>
+  <%= form.text_field :nickname %>
+  <%= form.submit 'Add team to tournament' %>
+<% end %>
