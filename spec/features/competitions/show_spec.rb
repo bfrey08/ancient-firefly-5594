@@ -25,10 +25,19 @@ RSpec.describe 'Competition Show Page' do
 
   it 'can open the competition show page and shows name, location and sport' do
     visit "/competitions/#{@competition_1.id}"
-    save_and_open_page
     expect(page).to have_content(@competition_1.name)
     expect(page).to have_content(@competition_1.location)
     expect(page).to have_content(@competition_1.sport)
+  end
+
+  it 'can add a team to a competition' do
+    visit "/competitions/#{@competition_1.id}"
+
+    fill_in(:nickname, with: 'Red Wings')
+
+    click_button('Add team to tournament')
+    expect(current_path).to eq("/competitions/#{@competition_1.id}")
+    expect(page).to have_content(@team_4.nickname)
   end
 
 end
