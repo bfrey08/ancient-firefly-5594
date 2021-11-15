@@ -1,0 +1,30 @@
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<h1>Competition</h1>
+  <h2><%= @competition.name %>
+  <%= @competition.location %>
+  <%= @competition.sport %></h2>
+
+
+    <table>
+
+        <tr>
+          <th> Team Hometown
+          <th> Team Nickname
+          <th> Average Player Age
+        </tr>
+        <% @competition.teams.each do |team| %>
+          <tr>
+
+          <section>
+          <th> <%= team.hometown %> </th>
+          <th> <%= team.nickname %> </th>
+          <th> <%= team.players.average_player_age %>
+          </section>
+        </tr>
+      <% end %>
+    </table>

@@ -25,7 +25,7 @@ RSpec.describe 'Team Invoice Page' do
 
   it 'can open the team index page' do
     visit '/teams'
-    save_and_open_page
+  
     expect(page).to have_content('Teams')
   end
 
